@@ -1,0 +1,32 @@
+import math as mt
+
+E_g=10
+
+print("enter Free fall height in meters:")
+H=int(input())
+if H < 0:
+    print("please enter height in real numbers")
+    H=int(input())
+    
+
+    
+
+print("what seconds position you would like to know")
+S=int(input())
+if S<0:
+    print("please enter real number")
+    S=int(input())
+
+
+print("what is initial speed in m/s")
+u=int(input())
+#----------------------------------------- THIS PART is Input variable inputs
+
+
+X=[]
+for ST in range(int(S)):
+     HF= mt.ceil((-E_g*pow(ST,2))/2  +   u*ST + H)
+     X.append(HF)
+#--------------------------------------------------   at this part X=[] create list while other ST puts value into HF(stands for Height final) and used ceil function to put flloats into integers and assume g=10 already
+#and X.append puts HF onto X list which is good to create more tracetory than simple final X(t)
+print(X)
