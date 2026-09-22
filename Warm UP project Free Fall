@@ -20,13 +20,22 @@ if S<0:
 
 print("what is initial speed in m/s")
 u=int(input())
-#----------------------------------------- THIS PART is Input variable inputs
+#----------------------------------------- THIS PART is Input variables and constants
 
 
 X=[]
 for ST in range(int(S)):
      HF= mt.ceil((-E_g*pow(ST,2))/2  +   u*ST + H)
-     X.append(HF)
+     if HF >=0:
+         X.append(HF)
+     else:
+         X.append(int(0))
+         X.append("landed")
+         break
+
+
+print(X)
 #--------------------------------------------------   at this part X=[] create list while other ST puts value into HF(stands for Height final) and used ceil function to put flloats into integers and assume g=10 already
 #and X.append puts HF onto X list which is good to create more tracetory than simple final X(t)
+# UPDATE ON CODE!!!!! : I added if function to code to improve quality where if FF position goes down below 0 it just automatically append 0 and say landed
 print(X)
